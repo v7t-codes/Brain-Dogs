@@ -1,1 +1,2 @@
-PSYCHOPY is all you need.
+psychopy
+#type only the name of the library with the version (optional) installed
