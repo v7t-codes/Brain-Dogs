@@ -1,0 +1,1 @@
+Place all the data we use for EEG signal checks and pre-processing here. Final curated data will not be stored here.
