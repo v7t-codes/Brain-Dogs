@@ -1,8 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy2 Experiment Builder (v1.85.3),
-    on March 13, 2018, at 23:45
+This experiment was created using PsychoPy2 Experiment Builder (v1.85.6),
+    on March 30, 2018, at 10:32
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -26,7 +26,7 @@ _thisDir = os.path.dirname(os.path.abspath(__file__)).decode(sys.getfilesystemen
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-expName = u'ling'  # from the Builder filename that created this script
+expName = 'ling'  # from the Builder filename that created this script
 expInfo = {u'session': u'001', u'participant': u''}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
@@ -40,7 +40,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expNa
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath=u'C:\\Users\\Srujan\\Desktop\\Project\\jumbled_sentences\\ling.psyexp',
+    originPath=u'C:\\Users\\Srujan\\Desktop\\Project4\\jumbled_sentences\\ling.psyexp',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -55,7 +55,7 @@ endExpNow = False  # flag for 'escape' or other condition => quit the exp
 win = visual.Window(
     size=(1366, 768), fullscr=True, screen=0,
     allowGUI=False, allowStencil=False,
-    monitor=u'testMonitor', color=[0,0,0], colorSpace='hsv',
+    monitor='testMonitor', color=[0,0,0], colorSpace='hsv',
     blendMode='avg', useFBO=True)
 # store frame rate of monitor if we can measure it
 expInfo['frameRate'] = win.getActualFrameRate()
@@ -67,56 +67,50 @@ else:
 # Initialize components for Routine "Instructions"
 InstructionsClock = core.Clock()
 instruct = visual.TextStim(win=win, name='instruct',
-    text=u'The jumbled sentences are to be aranged in a order that seems chronologically right.\n\nSelect the letter corresponding to the correct order on the keyboard.',
-    font=u'Arial',
+    text='The jumbled sentences are to be aranged in a order that seems chronologically right.\n\nSelect the letter corresponding to the correct order on the keyboard.',
+    font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='hsv', opacity=1,
+    color='white', colorSpace='hsv', opacity=1,
     depth=0.0);
 
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
 sentence1 = visual.TextStim(win=win, name='sentence1',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=(0, 0.6), height=0.05, wrapWidth=None, ori=0, 
     color=[1.000,1.000,-1.000], colorSpace='rgb', opacity=1,
     depth=0.0);
 sentence6 = visual.TextStim(win=win, name='sentence6',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=(0, 0.5), height=0.05, wrapWidth=None, ori=0, 
     color=[1.000,1.000,-1.000], colorSpace='rgb', opacity=1,
-    depth=-2.0);
+    depth=-1.0);
 sentence2 = visual.TextStim(win=win, name='sentence2',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=(0, 0.3), height=0.05, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='rgb', opacity=1,
-    depth=-3.0);
+    color='white', colorSpace='rgb', opacity=1,
+    depth=-2.0);
 sentence3 = visual.TextStim(win=win, name='sentence3',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=(0, 0.1), height=0.05, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='rgb', opacity=1,
-    depth=-4.0);
+    color='white', colorSpace='rgb', opacity=1,
+    depth=-3.0);
 sentence4 = visual.TextStim(win=win, name='sentence4',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=(0, -0.1), height=0.05, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='rgb', opacity=1,
-    depth=-5.0);
+    color='white', colorSpace='rgb', opacity=1,
+    depth=-4.0);
 sentence5 = visual.TextStim(win=win, name='sentence5',
     text='default text',
-    font=u'Arial',
+    font='Arial',
     pos=(0, -0.3), height=0.05, wrapWidth=None, ori=0, 
-    color=u'white', colorSpace='rgb', opacity=1,
-    depth=-6.0);
-optionstext = visual.TextStim(win=win, name='optionstext',
-    text='default text',
-    font=u'Arial',
-    pos=(0, -0.6), height=0.05, wrapWidth=None, ori=0, 
-    color=[1.000,-1.000,-1.000], colorSpace='rgb', opacity=1,
-    depth=-7.0);
+    color='white', colorSpace='rgb', opacity=1,
+    depth=-5.0);
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -228,15 +222,15 @@ for thisTrial in trials:
     routineTimer.add(90.500000)
     # update component parameters for each repeat
     sentence1.setText(S1)
-    key_resp_2 = event.BuilderKeyResponse()
     sentence6.setText(S6)
     sentence2.setText(P)
     sentence3.setText(Q)
     sentence4.setText(R)
     sentence5.setText(S)
-    optionstext.setText(options)
+    answers = event.BuilderKeyResponse()
+    exit = event.BuilderKeyResponse()
     # keep track of which components have finished
-    trialComponents = [sentence1, key_resp_2, sentence6, sentence2, sentence3, sentence4, sentence5, optionstext]
+    trialComponents = [sentence1, sentence6, sentence2, sentence3, sentence4, sentence5, answers, exit]
     for thisComponent in trialComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -257,35 +251,6 @@ for thisTrial in trials:
         frameRemains = 0.5 + 90- win.monitorFramePeriod * 0.75  # most of one frame period left
         if sentence1.status == STARTED and t >= frameRemains:
             sentence1.setAutoDraw(False)
-        
-        # *key_resp_2* updates
-        if t >= 0.5 and key_resp_2.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            key_resp_2.tStart = t
-            key_resp_2.frameNStart = frameN  # exact frame index
-            key_resp_2.status = STARTED
-            # keyboard checking is just starting
-            win.callOnFlip(key_resp_2.clock.reset)  # t=0 on next screen flip
-            event.clearEvents(eventType='keyboard')
-        frameRemains = 0.5 + 90- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if key_resp_2.status == STARTED and t >= frameRemains:
-            key_resp_2.status = STOPPED
-        if key_resp_2.status == STARTED:
-            theseKeys = event.getKeys(keyList=['a', 'b', 'c', 'd'])
-            
-            # check for quit:
-            if "escape" in theseKeys:
-                endExpNow = True
-            if len(theseKeys) > 0:  # at least one key was pressed
-                key_resp_2.keys = theseKeys[-1]  # just the last key pressed
-                key_resp_2.rt = key_resp_2.clock.getTime()
-                # was this 'correct'?
-                if (key_resp_2.keys == str(corrAns)) or (key_resp_2.keys == corrAns):
-                    key_resp_2.corr = 1
-                else:
-                    key_resp_2.corr = 0
-                # a response ends the routine
-                continueRoutine = False
         
         # *sentence6* updates
         if t >= 0.5 and sentence6.status == NOT_STARTED:
@@ -337,15 +302,56 @@ for thisTrial in trials:
         if sentence5.status == STARTED and t >= frameRemains:
             sentence5.setAutoDraw(False)
         
-        # *optionstext* updates
-        if t >= 0.5 and optionstext.status == NOT_STARTED:
+        # *answers* updates
+        if t >= 0.5 and answers.status == NOT_STARTED:
             # keep track of start time/frame for later
-            optionstext.tStart = t
-            optionstext.frameNStart = frameN  # exact frame index
-            optionstext.setAutoDraw(True)
+            answers.tStart = t
+            answers.frameNStart = frameN  # exact frame index
+            answers.status = STARTED
+            # keyboard checking is just starting
+            win.callOnFlip(answers.clock.reset)  # t=0 on next screen flip
+            event.clearEvents(eventType='keyboard')
         frameRemains = 0.5 + 90- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if optionstext.status == STARTED and t >= frameRemains:
-            optionstext.setAutoDraw(False)
+        if answers.status == STARTED and t >= frameRemains:
+            answers.status = STOPPED
+        if answers.status == STARTED:
+            theseKeys = event.getKeys(keyList=['p', 'q', 'r', 's'])
+            
+            # check for quit:
+            if "escape" in theseKeys:
+                endExpNow = True
+            if len(theseKeys) > 0:  # at least one key was pressed
+                answers.keys.extend(theseKeys)  # storing all keys
+                answers.rt.append(answers.clock.getTime())
+                # was this 'correct'?
+                if (answers.keys == str(corrAns)) or (answers.keys == corrAns):
+                    answers.corr = 1
+                else:
+                    answers.corr = 0
+        
+        # *exit* updates
+        if t >= 0.5 and exit.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            exit.tStart = t
+            exit.frameNStart = frameN  # exact frame index
+            exit.status = STARTED
+            # keyboard checking is just starting
+            win.callOnFlip(exit.clock.reset)  # t=0 on next screen flip
+            event.clearEvents(eventType='keyboard')
+        frameRemains = 0.5 + 90- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if exit.status == STARTED and t >= frameRemains:
+            exit.status = STOPPED
+        if exit.status == STARTED:
+            theseKeys = event.getKeys(keyList=['space'])
+            
+            # check for quit:
+            if "escape" in theseKeys:
+                endExpNow = True
+            if len(theseKeys) > 0:  # at least one key was pressed
+                exit.keys = theseKeys[-1]  # just the last key pressed
+                exit.rt = exit.clock.getTime()
+                # a response ends the routine
+                continueRoutine = False
         
         # check if all components have finished
         if not continueRoutine:  # a component has requested a forced-end of Routine
@@ -369,18 +375,24 @@ for thisTrial in trials:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # check responses
-    if key_resp_2.keys in ['', [], None]:  # No response was made
-        key_resp_2.keys=None
+    if answers.keys in ['', [], None]:  # No response was made
+        answers.keys=None
         # was no response the correct answer?!
         if str(corrAns).lower() == 'none':
-           key_resp_2.corr = 1  # correct non-response
+           answers.corr = 1  # correct non-response
         else:
-           key_resp_2.corr = 0  # failed to respond (incorrectly)
+           answers.corr = 0  # failed to respond (incorrectly)
     # store data for trials (TrialHandler)
-    trials.addData('key_resp_2.keys',key_resp_2.keys)
-    trials.addData('key_resp_2.corr', key_resp_2.corr)
-    if key_resp_2.keys != None:  # we had a response
-        trials.addData('key_resp_2.rt', key_resp_2.rt)
+    trials.addData('answers.keys',answers.keys)
+    trials.addData('answers.corr', answers.corr)
+    if answers.keys != None:  # we had a response
+        trials.addData('answers.rt', answers.rt)
+    # check responses
+    if exit.keys in ['', [], None]:  # No response was made
+        exit.keys=None
+    trials.addData('exit.keys',exit.keys)
+    if exit.keys != None:  # we had a response
+        trials.addData('exit.rt', exit.rt)
     thisExp.nextEntry()
     
 # completed 1 repeats of 'trials'
